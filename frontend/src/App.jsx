@@ -5,6 +5,9 @@ import Dashboard from './pages/Dashboard';
 import Patients from './pages/Patients';
 import Doctors from './pages/Doctors';
 import Appointments from './pages/Appointments';
+import Pharmacy from './pages/Pharmacy';
+import Prescriptions from './pages/Prescriptions';
+import Billing from './pages/Billing';
 import './index.css';
 
 function App() {
@@ -16,6 +19,9 @@ function App() {
           <Route path="patients" element={<Patients />} />
           <Route path="doctors" element={<Doctors />} />
           <Route path="appointments" element={<Appointments />} />
+          <Route path="pharmacy" element={<Pharmacy />} />
+          <Route path="prescriptions" element={<Prescriptions />} />
+          <Route path="billing" element={<Billing />} />
         </Route>
       </Routes>
     </BrowserRouter>

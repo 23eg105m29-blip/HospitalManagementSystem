@@ -41,6 +41,10 @@ public class DoctorController {
                     doctor.setSpecialization(doctorDetails.getSpecialization());
                     doctor.setContact(doctorDetails.getContact());
                     doctor.setEmail(doctorDetails.getEmail());
+                    doctor.setExperience(doctorDetails.getExperience());
+                    doctor.setDepartment(doctorDetails.getDepartment());
+                    doctor.setRoomNumber(doctorDetails.getRoomNumber());
+                    doctor.setStatus(doctorDetails.getStatus());
                     return ResponseEntity.ok(doctorService.saveDoctor(doctor));
                 })
                 .orElse(ResponseEntity.notFound().build());

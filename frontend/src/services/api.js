@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8082/api',
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8082/api',
     headers: {
         'Content-Type': 'application/json'
     }
@@ -29,6 +29,28 @@ export const appointmentApi = {
     create: (data) => api.post('/appointments', data),
     update: (id, data) => api.put(`/appointments/${id}`, data),
     delete: (id) => api.delete(`/appointments/${id}`)
+};
+
+export const medicineApi = {
+    getAll: () => api.get('/medicines'),
+    getById: (id) => api.get(`/medicines/${id}`),
+    create: (data) => api.post('/medicines', data),
+    update: (id, data) => api.put(`/medicines/${id}`, data),
+    delete: (id) => api.delete(`/medicines/${id}`)
+};
+
+export const prescriptionApi = {
+    getAll: () => api.get('/prescriptions'),
+    create: (data) => api.post('/prescriptions', data),
+    delete: (id) => api.delete(`/prescriptions/${id}`)
+};
+
+export const billApi = {
+    getAll: () => api.get('/bills'),
+    getById: (id) => api.get(`/bills/${id}`),
+    create: (data) => api.post('/bills', data),
+    update: (id, data) => api.put(`/bills/${id}`, data),
+    delete: (id) => api.delete(`/bills/${id}`)
 };
 
 export default api;

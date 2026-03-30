@@ -1,0 +1,9 @@
+com\hospital\controller\MedicineController.class
+com\hospital\repository\MedicineRepository.class
+com\hospital\controller\BillController.class
+com\hospital\controller\PrescriptionController.class
+com\hospital\repository\BillRepository.class
+com\hospital\entity\Medicine.class
+com\hospital\repository\PrescriptionRepository.class
+com\hospital\entity\Bill.class
+com\hospital\entity\Prescription.class

@@ -17,6 +17,10 @@ public class Doctor {
     private String specialization;
     private String contact;
     private String email;
+    private Integer experience;
+    private String department;
+    private String roomNumber;
+    private String status; // Available, On Leave, Busy
 
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Appointment> appointments;
@@ -33,4 +37,12 @@ public class Doctor {
     public void setContact(String contact) { this.contact = contact; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+    public Integer getExperience() { return experience; }
+    public void setExperience(Integer experience) { this.experience = experience; }
+    public String getDepartment() { return department; }
+    public void setDepartment(String department) { this.department = department; }
+    public String getRoomNumber() { return roomNumber; }
+    public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
