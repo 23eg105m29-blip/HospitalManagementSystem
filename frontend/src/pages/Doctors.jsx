@@ -58,15 +58,20 @@ const Doctors = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (formData.id) {
-        await doctorApi.update(formData.id, formData);
+      const payload = {
+        ...formData,
+        experience: formData.experience ? parseInt(formData.experience) : null
+      };
+      if (payload.id) {
+        await doctorApi.update(payload.id, payload);
       } else {
-        await doctorApi.create(formData);
+        await doctorApi.create(payload);
       }
       setIsModalOpen(false);
       fetchDoctors();
     } catch (error) {
-      console.error(error);
+      console.error("Error saving doctor:", error);
+      alert("Failed to save doctor details. Please try again.");
     }
   };
 

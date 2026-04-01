@@ -62,15 +62,20 @@ const Patients = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      if (formData.id) {
-        await patientApi.update(formData.id, formData);
+      const payload = {
+        ...formData,
+        age: formData.age ? parseInt(formData.age) : null
+      };
+      if (payload.id) {
+        await patientApi.update(payload.id, payload);
       } else {
-        await patientApi.create(formData);
+        await patientApi.create(payload);
       }
       setIsModalOpen(false);
       fetchPatients();
     } catch (error) {
-      console.error(error);
+      console.error("Error saving patient:", error);
+      alert("Failed to save patient details. Please try again.");
     }
   };
 
