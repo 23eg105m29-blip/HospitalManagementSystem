@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000
+  },
+  preview: {
+    allowedHosts: true // Allow any Railway domain to preview the app
   }
 })
